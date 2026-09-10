@@ -87,3 +87,56 @@ botonLimpiar.addEventListener(
 
     }
 );
+/* =========================
+   SELECTOR DE EMOJIS
+========================= */
+
+botonEmoji.addEventListener("click", () => {
+
+    selectorEmojis.classList.toggle("activo");
+
+});
+
+
+const emojis =
+    selectorEmojis.querySelectorAll("button");
+
+
+emojis.forEach((emoji) => {
+
+    emoji.addEventListener("click", () => {
+
+        const emojiSeleccionado =
+            emoji.textContent;
+
+        const inicio =
+            entradaMensaje.selectionStart;
+
+        const fin =
+            entradaMensaje.selectionEnd;
+
+        const textoActual =
+            entradaMensaje.value;
+
+
+        entradaMensaje.value =
+            textoActual.substring(0, inicio) +
+            emojiSeleccionado +
+            textoActual.substring(fin);
+
+
+        const nuevaPosicion =
+            inicio +
+            emojiSeleccionado.length;
+
+
+        entradaMensaje.focus();
+
+        entradaMensaje.setSelectionRange(
+            nuevaPosicion,
+            nuevaPosicion
+        );
+
+    });
+
+});
