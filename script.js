@@ -4,7 +4,11 @@ const entradaMensaje = document.getElementById("entradaMensaje");
 const botonMostrar = document.getElementById("mostrarMensaje");
 const botonLimpiar = document.getElementById("limpiarMensaje");
 
+const botonEmoji =
+    document.getElementById("botonEmoji");
 
+const selectorEmojis =
+    document.getElementById("selectorEmojis");
 /* Cargar último mensaje */
 
 const mensajeGuardado = localStorage.getItem("mensajePareja");
